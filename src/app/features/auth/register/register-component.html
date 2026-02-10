@@ -1,0 +1,54 @@
+<div class="bg-white shadow-lg rounded-2xl p-8">
+  <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
+    Create Account
+  </h2>
+
+  <form [formGroup]="registerForm" class="space-y-4">
+
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Full Name"
+      class="auth-input"
+    />
+
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="Email"
+      class="auth-input"
+    />
+
+    <select
+      formControlName="role"
+      class="auth-input"
+    >
+      <option value="">Select Role</option>
+      <option value="RENTER">Renter</option>
+      <option value="LANDLORD">Landlord</option>
+      <option value="AGENT">Agent</option>
+    </select>
+
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+      class="auth-input"
+    />
+
+    <button
+      type="submit"
+      class="w-full py-2 bg-primary text-white rounded-lg
+             hover:bg-primary-dark transition"
+    >
+      Register
+    </button>
+  </form>
+
+  <p class="mt-6 text-center text-sm text-gray-500">
+    Already have an account?
+    <a routerLink="/auth/login" class="text-primary font-medium">
+      Login
+    </a>
+  </p>
+</div>
