@@ -3,7 +3,7 @@ import { AuthLayoutComponent } from '../../layouts/auth-layout/auth-layout.compo
 import { LoginComponent } from './login/login-component';
 import { RegisterComponent } from './register/register-component';
 
-const routes: Routes = [
+export const AUTH_ROUTES: Routes = [
   {
     path: '',
     component: AuthLayoutComponent,
