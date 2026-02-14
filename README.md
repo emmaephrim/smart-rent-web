@@ -1,59 +1,194 @@
-# SmartRentWeb
+# 🏠 Smart Property & Rental Management Platform – Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+Frontend Web Application for the Smart Property & Rental Management Platform.
 
-## Development server
+A scalable, role-based property discovery and rental management system designed to solve housing discovery challenges in Ghana and emerging markets.
 
-To start a local development server, run:
+---
 
-```bash
+## 🚀 Overview
+
+The Web App serves as the primary interface for:
+
+- Renters searching and booking properties
+- Landlords listing and managing properties
+- Agents managing multiple properties
+- Admins verifying listings to reduce scams
+
+This project is part of a multi-repository architecture:
+
+| Repository | Tech Stack                 |
+| ---------- | -------------------------- |
+| Web        | Angular + Tailwind CSS     |
+| API        | Spring Boot + JWT          |
+| Mobile     | Flutter                    |
+| Database   | PostgreSQL (PostGIS Ready) |
+
+---
+
+## 🏗 Architecture
+
+Built using **Modern Angular Standalone Architecture** .
+
+- Standalone Components (No NgModules)
+- Feature-based routing (`*.routes.ts`)
+- Lazy-loaded feature domains
+- Role-Based Access Control (RBAC)
+- Clean separation of:
+  - Core (services, interceptors, guards)
+  - Shared (UI components, pipes, models)
+  - Features (auth, properties, bookings, dashboard)
+
+---
+
+## 🧩 Project Structure
+
+src/
+│── app/
+│ ├── core/
+│ │ ├── auth/
+│ │ ├── interceptors/
+│ │ ├── services/
+│ │
+│ ├── shared/
+│ │ ├── components/
+│ │ ├── pipes/
+│ │ ├── models/
+│ │
+│ ├── features/
+│ │ ├── auth/
+│ │ ├── properties/
+│ │ ├── bookings/
+│ │ ├── messaging/
+│ │ ├── dashboard/
+│ │
+│ ├── layouts/
+│ │ ├── auth-layout/
+│ │ ├── main-layout/
+│
+│ └── app.routes.ts
+
+## 🔐 Authentication & Roles
+
+Role-Based Access:
+
+- RENTER
+- LANDLORD
+- AGENT
+- ADMIN
+
+Authentication handled via:
+
+- JWT Token Storage
+- HTTP Interceptor for Authorization
+- AuthGuard & RoleGuard for route protection
+
+---
+
+## 💻 Tech Stack (Web)
+
+- Angular (Standalone API)
+- TypeScript
+- Tailwind CSS
+- RxJS
+- Angular Router (Lazy Loaded Features)
+
+---
+
+## 📌 Core Features
+
+### 👤 Authentication
+
+- Login / Register
+- Role-based registration
+- JWT secured routes
+
+### 🏠 Properties
+
+- List properties
+- Advanced filtering
+- Property detail view
+- Image gallery
+- Availability calendar (Upcoming)
+
+### 📅 Bookings
+
+- Schedule visit
+- Booking status tracking
+
+### 💬 Messaging (Planned)
+
+- In-app landlord/renter chat
+
+### 🛡 Admin Dashboard
+
+- Verify listings
+- Remove fraudulent properties
+- Analytics overview
+
+---
+
+## 🗄 Backend API
+
+The Web application integrates with the Spring Boot API repository which provides:
+
+- RESTful endpoints
+- JWT authentication
+- PostgreSQL relational database
+- PostGIS support for geo-location queries
+- Redis caching (planned for popular listings)
+
+---
+
+## 🌍 Target Problem
+
+In Ghana and many African regions:
+
+- Property discovery is difficult
+- Listings are scattered and unreliable
+- High risk of rental scams
+
+This platform centralizes listings and introduces verification to improve trust and accessibility.
+
+---
+
+## 🔄 Future Improvements
+
+- Google Maps / Mapbox integration
+- Real-time chat via WebSocket
+- Property recommendation engine
+- Redis caching for high-traffic endpoints
+- Analytics dashboard with charts
+- Payment integration🛠 Installation & Setup
+
+## 🛠 Installation & Setup
+
+# Clone repository
+
+git clone [https://github.com/emmaephrim/smart-rent-web.git](https://github.com/emmaephrim/smart-rent-web.git)
+
+# Install dependencies
+
+cd smart-rent-web
+
+npm install
+
+# Run development server
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🔗 Related Repositories
 
-## Code scaffolding
+- [API Repository (Spring Boot)](https://github.com/emmaephrim/smart-rent-api.git)
+- [Mobile App Repository (Flutter)](https://github.com/emmaephrim/smart-rent-mobile.git)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 👨🏾‍💻 Author
 
-```bash
-ng generate component component-name
-```
+**Emmanuel Ephrim**
+Fullstack Developer | Mobile Developer | Cloud | Web Developer
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Built as part of a scalable property-tech ecosystem focused on solving real housing discovery challenges in Africa.
 
-```bash
-ng generate --help
-```
+## 📄 License
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is for educational and portfolio purposes.
